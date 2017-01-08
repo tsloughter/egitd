@@ -21,21 +21,3 @@ same repo, and does not suffer the timeout issues mentioned above even on
 the large repos like gentoo's portage where github was having problems.
 
 You can see Vagabond's rewrite notes here: http://andrew.hijacked.us/by_keyword/328/egit
-
-Ranch
------
-
-I (Tristan) did a partial rewrite for the hell of it to use
-Ranch (http://github.com/extend/ranch), made some style configuration
-changes and added relx (http://erlware.github.io/relx) for building a release.
-
-Getting Started
----------------
-
-First copy `config/example.sys.config` to `config/sys.config` and replace the
-`repo_dir` value with the path to the git repos you want to serve.
-
-```
-$ make
-$ _rel/bin/egitd console
-```

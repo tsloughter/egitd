@@ -7,7 +7,7 @@
                   ,stdlib
                   ,sasl
                   ,lager
-                  ,ranch]},
+                  ,acceptor_pool]},
    {mod, {egitd_app, []}},
    {start_phases, []}
   ]}.

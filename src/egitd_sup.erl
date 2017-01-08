@@ -22,7 +22,12 @@ start_link() ->
 %%%===================================================================
 
 init([]) ->
-    {ok, {{one_for_one, 10, 10}, []}}.
+    Flags = #{strategy => rest_for_one},
+    Pool = #{id => egitd_acceptor_pool,
+             start => {egitd_acceptor_pool, start_link, []}},
+    Socket = #{id => egitd_socket,
+               start => {egitd_socket, start_link, []}},
+    {ok, {Flags, [Pool, Socket]}}.
 
 %%%===================================================================
 %%% Internal functions
